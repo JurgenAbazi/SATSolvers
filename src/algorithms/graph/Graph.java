@@ -9,7 +9,7 @@ public class Graph<T> {
     /**
      * Improved Adjacency List Implementation of the Graph.
      */
-    private Map<T, List<T>> graph;
+    private final Map<T, List<T>> graph;
 
     /**
      * Stack of Vertices ordered by Strongly Connected Components.
@@ -34,7 +34,7 @@ public class Graph<T> {
     /**
      * Variable storing if the graph is directed or not
      */
-    private boolean directed;
+    private final boolean directed;
 
     /**
      * 1-Parameter Constructor.

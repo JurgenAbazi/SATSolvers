@@ -11,7 +11,7 @@ public class Model {
     /**
      * The variables and their assignments map.
      */
-    private Map<Variable, Boolean> assignments;
+    private final Map<Variable, Boolean> assignments;
 
     /**
      * Default Constructor.

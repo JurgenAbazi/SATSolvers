@@ -27,7 +27,7 @@ public class HornSAT {
                 if (clause.getNumberOfLiterals() == 1) {
                     throw new UnsatisfiableFormulaException("No satisfying assignments exist for the Horn-SAT.");
                 }
-                clause.getLiterals().remove(new Literal(variable, true));
+                clause.removeLiteral(new Literal(variable, true));
                 if (clause.isEmptyImplication() && !clause.getFirst().getAtom().equals(variable)) {
                     formula.addEmptyImplication(clause.getFirst().getAtom());
                 }

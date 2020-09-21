@@ -1,7 +1,7 @@
 package algorithms.cnf;
 
 /**
- * Class representing a Literal
+ * Class representing a Literal.
  */
 public class Literal {
     /**

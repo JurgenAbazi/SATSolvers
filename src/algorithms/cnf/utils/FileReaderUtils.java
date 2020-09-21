@@ -7,6 +7,7 @@ import algorithms.cnf.Variable;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
 import java.util.HashMap;
 
 /**
@@ -19,10 +20,10 @@ public class FileReaderUtils {
      * @param fileName the name of the file being read
      * @return a formula in CNF form
      */
-    public static Formula readFile(String fileName) {
+    public static Formula parseFormulaFromFile(String fileName) {
         try {
             File file = new File(fileName);
-            BufferedReader reader = new BufferedReader(new java.io.FileReader(file));
+            BufferedReader reader = new BufferedReader(new FileReader(file));
             int numberOfVariables = Integer.parseInt(reader.readLine());
             Formula formula = new Formula(numberOfVariables);
 

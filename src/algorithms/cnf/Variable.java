@@ -10,13 +10,13 @@ public class Variable {
     /**
      * The variable numbering.
      */
-    private int var;
+    private final int var;
 
     /**
      * Set of all clauses containing the variable as a negated literal.
      * Used by the HornSAT algorithm.
      */
-    private Set<Clause> clausesContainingNegation;
+    private final Set<Clause> clausesContainingNegation;
 
     /**
      * Constructor.

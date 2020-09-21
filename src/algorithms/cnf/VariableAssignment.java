@@ -8,12 +8,12 @@ public class VariableAssignment {
     /**
      * A variable of a satisfiability problem formula.
      */
-    private Variable variable;
+    private final Variable variable;
 
     /**
      * The truth value assigned to the variable.
      */
-    private boolean assignment;
+    private final boolean assignment;
 
     /**
      * Constructor.

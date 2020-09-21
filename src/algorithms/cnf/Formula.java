@@ -3,7 +3,7 @@ package algorithms.cnf;
 import java.util.*;
 
 /**
- * Class representing a Conjunctive Normal Form formula
+ * Class representing a Conjunctive Normal Form formula.
  */
 public class Formula {
     /**
@@ -58,12 +58,14 @@ public class Formula {
     }
 
     /**
-     * Returns a set of clauses present in the formula.
+     * Returns an unmodifiable copy of the set of clauses present in the formula.
+     * Encapsulate Collection pattern is used to ensure the set of clauses is unmodifiable except
+     * through the appropriate methods offered by a Formula object.
      *
      * @return The set of clauses.
      */
     public Set<Clause> getClauses() {
-        return clauses;
+        return Collections.unmodifiableSet(clauses);
     }
 
     /**
@@ -76,11 +78,14 @@ public class Formula {
     }
 
     /**
-     * Returns the queue of variables that are present in an empty implication clause.
-     * @return Empty implication variables queue.
+     * Gets an unmodifiable collection of the variables that are present in an empty implication clause.
+     * Encapsulate Collection pattern is used to ensure the set of empty implications is unmodifiable
+     * except through the appropriate methods offered by a Formula object.
+     *
+     * @return Empty implication variables collection.
      */
-    public Queue<Variable> getEmptyImplications() {
-        return emptyImplications;
+    public Collection<Variable> getEmptyImplications() {
+        return Collections.unmodifiableCollection(emptyImplications);
     }
 
     /**

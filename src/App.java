@@ -15,7 +15,7 @@ public class App {
     /**
      * Scanner for reading user input.
      */
-    private static Scanner scanner = new Scanner(System.in);
+    private static final Scanner scanner = new Scanner(System.in);
 
     /**
      * Main method.
@@ -29,7 +29,7 @@ public class App {
     /**
      * Initiates the command line program.
      */
-    public static void init() {
+    private static void init() {
         int input;
 
         System.out.println("Welcome to the CNF SAT solver.");
@@ -69,7 +69,7 @@ public class App {
     /**
      * Option for testing the Check Assignment Option.
      */
-    public static void checkAssignmentOption() {
+    private static void checkAssignmentOption() {
         Formula formula = readFile();
         int numberOfVariables = formula.getNumberOfVariables();
         boolean[] assignment = new boolean[numberOfVariables];
@@ -91,9 +91,9 @@ public class App {
     }
 
     /**
-     * Option for checking if formula is Horn-SAT
+     * Option for checking if formula is Horn-SAT.
      */
-    public static void isHornSATOption() {
+    private static void isHornSATOption() {
         Formula formula = readFile();
         if (SATUtils.isHornSAT(formula)) {
             System.out.println("The formula entered is Horn-SAT.");
@@ -103,9 +103,9 @@ public class App {
     }
 
     /**
-     * Option for checking if formula is 2-SAT
+     * Option for checking if formula is 2-SAT.
      */
-    public static void is2SATOption() {
+    private static void is2SATOption() {
         Formula formula = readFile();
         if (SATUtils.is2SAT(formula)) {
             System.out.println("The formula entered is 2-SAT.");
@@ -117,7 +117,7 @@ public class App {
     /**
      * Option for testing Solve General SAT algorithm.
      */
-    public static void solveGeneralSATOption() {
+    private static void solveGeneralSATOption() {
         try {
             boolean[] solution;
             Formula formula = readFile();
@@ -133,7 +133,7 @@ public class App {
     /**
      * Option for testing Solve 2-SAT algorithm.
      */
-    public static void solve2SATOption() {
+    private static void solve2SATOption() {
         try {
             Formula formula = readFile();
             if (SATUtils.is2SAT(formula)) {
@@ -150,7 +150,7 @@ public class App {
     /**
      * Option for testing Solve Horn-SAT algorithm.
      */
-    public static void solveHornSATOption() {
+    private static void solveHornSATOption() {
         try {
             Formula formula = readFile();
             if (SATUtils.isHornSAT(formula)) {
@@ -167,19 +167,19 @@ public class App {
     /**
      * Prints closing message.
      */
-    public static void closeOption() {
+    private static void closeOption() {
         System.out.println("Exiting command line interface.");
     }
 
     /**
      * Prompts the user for the formula file path.
      *
-     * @return The parsed formula
+     * @return The parsed formula.
      */
     private static Formula readFile() {
         System.out.println("Please enter the path of the file containing the SAT Formula:");
         String path = scanner.next();
 
-        return FileReaderUtils.readFile(path);
+        return FileReaderUtils.parseFormulaFromFile(path);
     }
 }
